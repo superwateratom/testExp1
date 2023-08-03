@@ -63,6 +63,7 @@ public class kecheng_final extends AbstractFormPlugin implements Plugin {
             Object yt77Name = query2.get(0).get("yt77_name");
 
             if (control(yt77Name.toString(),intnumber,anInt)){
+                //获取课程相关信息
                 DynamicObjectCollection query_myclass = QueryServiceHelper.query("yt77_choose_list",
                         "yt77_name,yt77_class_cycle,yt77_week,yt77_lessons,yt77_credits,yt77_leftnumber,yt77_number",
                         new QFilter[]{filter});
@@ -74,7 +75,7 @@ public class kecheng_final extends AbstractFormPlugin implements Plugin {
                 Object credits = query_myclass.get(0).get("yt77_credits");
                 Object leftnumber = query_myclass.get(0).get("yt77_leftnumber");
 
-
+                //设置弹出页面显示参数
                 FormShowParameter parameter = new FormShowParameter();
 
                 parameter.setFormId("yt77_confirm");
